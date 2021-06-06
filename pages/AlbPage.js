@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StyleSheet, Button, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { StyleSheet, Button, Text, View, TouchableOpacity, Image, ScrollView , ImageBackground} from 'react-native';
 import { Ionicons, AntDesign, MaterialCommunityIcons, Feather, SimpleLineIcons } from '@expo/vector-icons';
 
 
@@ -17,13 +17,18 @@ import styles from './styles';
 		
 return (
 
-      <SafeAreaView style={{ flex: 1 }}>
-        <ScrollView 
-          style={[styling.container1, {backgroundColor: 'white'}]}
-          contentContainerStyle={{flexGrow: 1}}>
+		<SafeAreaView style={{ flex: 1 }}>
+
+		<ImageBackground source={require('../images/pako-familjare.png')}   
+			style={{ flex: 1, width: '100%', height: '100%'}} 
+			imageStyle= {{opacity:0.5}}>
+
+			<ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
       
-			<View style={{flex: 1, backgroundColor: '#f6f6f6'}}>
-				<View style={{flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#fff', marginBottom: 10}}>
+			<View style={{flex: 1, width: '100%', height: '100%' }}>
+
+
+				<View style={{flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10}}>
 					<View style={[styles.centerElement, {height: 50}]}>
 						<Text style={{fontSize: 18, color: '#000', paddingLeft: 15}}></Text>
             						<Text style={{fontSize: 14, color: '#000', paddingLeft: 15}}>Kliko ne pako per te gjeneruar kodin e aktivizimit</Text>
@@ -33,36 +38,35 @@ return (
 				</View>
 
 
-				<TouchableOpacity style={{flexDirection: 'row', backgroundColor: '#fff', marginBottom: 2, height: 100}} onPress={()=>{}}>
+				<TouchableOpacity style={{flexDirection: 'row', marginBottom: 2, height: 100}} onPress={()=>{}}>
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}> 
-
-                  
-						
+						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 15}}>    
+						<Text style={{fontSize: 15, color: "white"}}> ALB {"\n"} 200</Text>
+               					
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
-						<Text style={{fontSize: 15}}>ALB 200</Text>
-						<Text numberOfLines={6} style={{color: '#8f8f8f'}}>
+						
+						<Text numberOfLines={6} style={{color: 'black'}}>
 							6 GB Internet{"\n"}
 							PA LIMIT - Minuta Vala & Fiks{"\n"}
 							PA LIMIT - SMS kombetare{"\n"}
 							100 minuta kombetare,
 							Validiteti - 30 dite
 
-          </Text>
+          				</Text>
 					</View>
 				</TouchableOpacity>
 
 
 
 
-<View style={{flexDirection: 'row', backgroundColor: '#fff', marginBottom: 2, padding:20, height: 100,
+					<View style={{flexDirection: 'row', marginBottom: 2, padding:20, height: 100,
 
- justifyContent: 'space-between',  alignItems: 'center',
+					justifyContent: 'space-between',  alignItems: 'center',
 
 
-}}>
+					}}>
 
 
 					<View style={[styles.centerElement, {width: 125}]}>
@@ -91,16 +95,16 @@ return (
 
       
 
-				<TouchableOpacity style={{flexDirection: 'row', backgroundColor: '#fff', marginBottom: 2, height: 100}} onPress={()=>{}}>
+				<TouchableOpacity style={{flexDirection: 'row', marginBottom: 2, height: 100}} onPress={()=>{}}>
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25, backgroundColor: '#FF1493'}}>    
-						<Text style={{fontSize: 15, color: "white"}}>ALB 500</Text>
+						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 15}}>    
+						<Text style={{fontSize: 15, color: "black"}}> ALB {"\n"} 500</Text>
                					
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
 						
-						<Text numberOfLines={6} style={{color: '#8f8f8f'}}>
+						<Text numberOfLines={6} style={{color: 'black'}}>
 								6 GB Internet{"\n"}
 								PA LIMIT - Minuta Vala & Fiks{"\n"}
 								PA LIMIT - SMS kombetare{"\n"}
@@ -114,7 +118,7 @@ return (
 
 
 
-				<View style={{flexDirection: 'row', backgroundColor: '#fff', marginBottom: 2, padding:20, height: 100,
+				<View style={{flexDirection: 'row', marginBottom: 2, padding:20, height: 100,
 
 				justifyContent: 'space-between',  alignItems: 'center'
 
@@ -145,6 +149,8 @@ return (
 			</View>
 
             </ScrollView> 
+
+			</ImageBackground>
 
       </SafeAreaView>
 

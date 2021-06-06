@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StyleSheet, Button, Text, View, TouchableOpacity,  ScrollView , SafeAreaView } from 'react-native';
+import { StyleSheet, Button, Text, View, TouchableOpacity,  ScrollView , SafeAreaView , ImageBackground} from 'react-native';
 import {   MaterialCommunityIcons } from '@expo/vector-icons';
 
 
@@ -13,23 +13,26 @@ import styles from './styles';
 		
 		return (
 
-            <SafeAreaView style={{ flex: 1 }}>
+			<SafeAreaView style={{ flex: 1 }}>
 
-            <ScrollView 
-          style={[styling.container1, {backgroundColor: 'white'}]}
-          contentContainerStyle={{flexGrow: 1}}>
-      
-			<View style={{flex: 1, backgroundColor: '#f6f6f6'}}>
-				<View style={{flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#fff', marginBottom: 2}}>
+			<ImageBackground source={require('../images/pako-familjare.png')}   
+				style={{ flex: 1, width: '100%', height: '100%'}} 
+				imageStyle= {{opacity:0.5}}>
+	
+				<ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
+		  
+				<View style={{flex: 1, width: '100%', height: '100%' }}>
+
+
+				<View style={{flexDirection: 'row',   marginBottom: 2}}>
 					<View style={[styles.centerElement, {height: 50}]}>
-						<Text style={{fontSize: 18, color: '#000', paddingLeft: 15}}></Text>
-            			<Text style={{fontSize: 14, color: '#000', paddingLeft: 15}}>Kliko ne pako per te gjeneruar kodin e aktivizimit</Text>
+						<Text style={{fontSize: 14, color: '#000', paddingLeft: 15, textAlign:'center'}}>Na kontaktoni ne qendren e thirrjeve</Text>
 					</View>
 
 
 				</View>
 
-				<TouchableOpacity style={{flexDirection: 'row', backgroundColor: '#fff', marginBottom: 2, height: 100}} onPress={()=>{}}>
+				<TouchableOpacity style={{flexDirection: 'row', marginBottom: 2, height: 100}} onPress={()=>{}}>
 					<View style={[styles.centerElement, {width: 75}]}>
 					<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}> 
 
@@ -52,33 +55,33 @@ import styles from './styles';
 
 
 
-        <View style={{flexDirection: 'row', backgroundColor: '#fff', marginBottom: 2, padding:20, height: 100,
+			<View style={{flexDirection: 'row',  marginBottom: 2, padding:20, 
 
-        justifyContent: 'space-between',  alignItems: 'center'}}>
+			justifyContent: 'space-between',  alignItems: 'center', width:'100%'}}>
 
 
 				<View style={[styles.centerElement, {width: 100}]}>
-					<View style={{borderWidth: 3, borderColor: '#ececec', padding: 10, borderRadius: 25}}>
+					<View style={{borderWidth: 3, borderColor: '#ececec', padding: 10, borderRadius: 25, height:100, width:100, justifyContent: 'center'}}>
 						<TouchableOpacity  onPress={async () => await handlePress('tel:080010000')}>
-                            <Text style={{fontSize: 12}}>INDIVIDE </Text>
+                            <Text style={{fontSize: 15, textAlign:'center'}}>INDIVIDE </Text>
                 		</TouchableOpacity>
 				    </View>
 				</View>
 
 
 
-        			<View style={[styles.centerElement, {width: 105}]}>
-						<View style={{borderWidth: 3, borderColor: '#ececec', padding:10 , borderRadius: 25}}>
+        			<View style={[styles.centerElement, {width: 100}]}>
+						<View style={{borderWidth: 3, borderColor: '#ececec', padding:10 , borderRadius: 25, height:100, width:100, justifyContent: 'center'}}>
 							<TouchableOpacity  onPress={async () => await handlePress('tel:080015000')}>
-                				<Text style={{fontSize: 12}}>BIZNESET</Text>
+                				<Text style={{fontSize: 15, textAlign:'center'}}>BIZNESET</Text>
               				</TouchableOpacity>
 						</View>
 					</View>
 
-					<View style={[styles.centerElement, {width: 100}]}>
-						<View style={{borderWidth: 3, borderColor: '#ececec', padding:10 , borderRadius: 25}}>
+					<View style={[styles.centerElement, {width: 100, height:100}]}>
+						<View style={{borderWidth: 3, borderColor: '#ececec', padding:10 , borderRadius: 25, height:100, width:100, justifyContent: 'center'}}>
 							<TouchableOpacity  onPress={async () => await handlePress('tel:080016000')}>
-                				<Text style={{fontSize: 12}}>BIZNESET</Text>
+                				<Text style={{fontSize: 12, textAlign:'center'}}>INSTUCIONE</Text>
               				</TouchableOpacity>
 						</View>
 					</View>
@@ -86,23 +89,12 @@ import styles from './styles';
 
         </View>
 
-		
-
-			
-
-
-      
-
-
-
-
-
-
-
 
 			</View>
 
             </ScrollView> 
+
+			</ImageBackground>
 
       </SafeAreaView>
 

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity,  ScrollView , SafeAreaView, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity,  ScrollView , SafeAreaView, ImageBackground,  Dimensions } from 'react-native';
 import {MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { handlePress} from '../util';
@@ -13,23 +13,34 @@ import styles from './styles';
 
 
 const MissedCallsPage = ({ navigation }) => {
+
+	const DeviceWidth = Dimensions.get('window').width ;
+	const DeviceHeight = Dimensions.get('window').height ;
+
 		
 return (
 
-        <SafeAreaView style={{ flex: 1 }}>
-          <ScrollView style={[styling.container1, {backgroundColor: 'white'}]} contentContainerStyle={{flexGrow: 1}}>
+    <SafeAreaView style={{ flex: 1 }}>
+
+		<ImageBackground source={require('../images/pako-familjare.png')}   
+			style={{ flex: 1, width: '100%', height: '100%'}} 
+			imageStyle= {{opacity:0.5}}>
+
+			<ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
       
-			    <View style={{flex: 1, backgroundColor: '#f6f6f6'}}>
-				    <View style={{flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#fff', marginBottom: 2}}>
+			<View style={{flex: 1, width: '100%', height: '100%' }}>
+
+
+				    <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBottom: 2}}>
 					    <View style={[styles.centerElement, {height: 20}]}>
 						      <Text style={{fontSize: 18, color: '#000', paddingLeft: 15}}></Text>
             		
+						</View>
+
+
 					</View>
 
-
-				</View>
-
-				<TouchableOpacity style={{flexDirection: 'row', backgroundColor: '#fff', marginBottom: 2, height: 100}} onPress={()=>{}}>
+				<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 100}} onPress={()=>{}}>
 					<View style={[styles.centerElement, {width: 75}]}>
 					<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}> 
 
@@ -47,16 +58,9 @@ return (
 
 
 
-        <View style={{flexDirection: 'row', backgroundColor: '#fff', marginBottom: 2, padding:20, height: 100,
+        	<View style={{flexDirection: 'row', marginBottom: 2, padding:20, height: 100,
 
-        justifyContent: 'space-between',  alignItems: 'center'}}>
-
-{/*
-
-comment section
-
-*/
-}
+        		justifyContent: 'space-between',  alignItems: 'center'}}>
  
         			<View style={[styles.centerElement, {width: 105}]}>
 						<View style={{borderWidth: 3, borderColor: '#ececec', padding:10 , borderRadius: 25}}>
@@ -75,11 +79,15 @@ comment section
 					</View>
 
 
-        </View>
+        	</View>
+
+
 
 			</View>
 
             </ScrollView> 
+
+			</ImageBackground>
 
       </SafeAreaView>
 

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import  { useState } from 'react';
 
-import { Text, View, StyleSheet, TextInput, Button, Alert } from 'react-native';
+import { Text, View, StyleSheet, TextInput, Button, Alert, SafeAreaView, ImageBackground, ScrollView } from 'react-native';
 
  import RNPickerSelect from "react-native-picker-select";
 
@@ -28,8 +28,15 @@ const FillPage= ({ navigation }) => {
   return (
 
 
-  <View style={styles.container}>
+    <SafeAreaView style={{ flex: 1 }}>
 
+    <ImageBackground source={require('../images/pako-familjare.png')}   
+      style={{ flex: 1, width: '100%', height: '100%'}} 
+      imageStyle= {{opacity:0.5}}>
+
+      <ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
+    
+      <View style={{flex: 1, width: '100%', height: '100%' }}>
 
     <Text style={styles.label}>Mbushje me gervishje</Text>
       <Text style={styles.label}>Sheno numerin:</Text>
@@ -78,6 +85,12 @@ const FillPage= ({ navigation }) => {
 
 
     </View>
+
+    </ScrollView> 
+
+</ImageBackground>
+
+</SafeAreaView>
 
 
   );

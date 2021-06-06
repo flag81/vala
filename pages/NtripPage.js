@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StyleSheet, Button, Text, View, TouchableOpacity,  ScrollView } from 'react-native';
+import { StyleSheet, Button, Text, View, TouchableOpacity,  ScrollView, ImageBackground } from 'react-native';
 import { Ionicons,  MaterialCommunityIcons } from '@expo/vector-icons';
 
 
@@ -18,14 +18,18 @@ import styles from './styles';
 		
 		return (
 
-            <SafeAreaView style={{ flex: 1 }}>
+			<SafeAreaView style={{ flex: 1 }}>
 
-            <ScrollView 
-          style={[styling.container1, {backgroundColor: 'white'}]}
-          contentContainerStyle={{flexGrow: 1}}>
-      
-			<View style={{flex: 1, backgroundColor: '#f6f6f6'}}>
-				<View style={{flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#fff', marginBottom: 2}}>
+			<ImageBackground source={require('../images/pako-familjare.png')}   
+				style={{ flex: 1, width: '100%', height: '100%'}} 
+				imageStyle= {{opacity:0.5}}>
+	
+				<ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
+		  
+				<View style={{flex: 1, width: '100%', height: '100%' }}>
+
+
+				<View style={{flexDirection: 'row', justifyContent: 'space-between',  marginBottom: 2}}>
 					<View style={[styles.centerElement, {height: 50}]}>
 						<Text style={{fontSize: 18, color: '#000', paddingLeft: 15}}></Text>
             			<Text style={{fontSize: 14, color: '#000', paddingLeft: 15}}>Kliko ne pako per te gjeneruar kodin e aktivizimit</Text>
@@ -34,7 +38,7 @@ import styles from './styles';
 
 				</View>
 
-				<TouchableOpacity style={{flexDirection: 'row', backgroundColor: '#fff', marginBottom: 2, height: 180}} onPress={()=>{}}>
+				<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 180}} onPress={()=>{}}>
 					<View style={[styles.centerElement, {width: 75}]}>
 					<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>      
                 <MaterialCommunityIcons name="alpha-n-circle" size={28} color="#26aa99" />
@@ -58,7 +62,7 @@ import styles from './styles';
 
 
 
-        <View style={{flexDirection: 'row', backgroundColor: '#fff', marginBottom: 2, padding:20, height: 100,
+        <View style={{flexDirection: 'row',  marginBottom: 2, padding:20, height: 100,
 
         justifyContent: 'space-between',  alignItems: 'center',
 
@@ -95,7 +99,7 @@ import styles from './styles';
 
 
 
-<View style={{flexDirection: 'row', backgroundColor: '#fff', marginBottom: 2, padding:20, height: 100,
+<View style={{flexDirection: 'row',  marginBottom: 2, padding:20, height: 100,
 
  justifyContent: 'space-between',  alignItems: 'center'
 
@@ -119,6 +123,8 @@ import styles from './styles';
 			</View>
 
             </ScrollView> 
+
+			</ImageBackground>
 
       </SafeAreaView>
 
