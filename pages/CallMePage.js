@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import  { useState } from 'react';
 
-import { Text, View, StyleSheet, TextInput, Button,Alert } from 'react-native';
+import { Text, View, StyleSheet, TextInput, Button,Alert, SafeAreaView, ScrollView, Dimensions, ImageBackground, TouchableOpacity } from 'react-native';
 
  import RNPickerSelect from "react-native-picker-select";
 
@@ -51,6 +51,9 @@ const CallMePage= ({ navigation }) => {
   
   const [amount, setAmount] = useState(0);
 
+  const DeviceWidth = Dimensions.get('window').width ;
+	const DeviceHeight = Dimensions.get('window').height ;
+
 
 
   //console.log(errors);
@@ -58,35 +61,70 @@ const CallMePage= ({ navigation }) => {
   return (
 
 
-  <View style={styles.container}>
+    <SafeAreaView style={{ flex: 1 }}>
+
+		<ImageBackground source={require('../images/pako-familjare.png')}   
+			style={{ flex: 1, width: '100%', height: '100%'}} 
+			imageStyle= {{opacity:0.5}}>
+
+			<ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
+      
+			<View style={{flex: 1, width: '100%', height: '100%' }}>
 
 
-      <Text style={styles.label}>Sheno numerin te telefonit qe doni ta lajm:</Text>
+      <View style={{ width: '80%', padding:10}}>
 
-        <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-          onChangeText={(text) => setsecretCode(text)}
-          value={secretCode}
-          keyboardType= {"numeric"}
-          maxLength = {8}
-          placeholder = {'Sheno numerin e telefonit 4xxxxxxxx'}
-        />
+                <Text style={styles.label}>Sheno numerin te telefonit qe doni ta lajm:</Text>
 
 
-      <View  style={{ marginTop:40 }}>
-        <Button
-         
-            style={{height: 40, borderWidth: 0 }}
-            title="Gjenero kodin per sherbimin"
-            onPress={
-                       () =>  checkphone(secretCode , amount)
-                  }
-        />
+                  <TextInput
+                    style={{height: 40, borderWidth: 1, borderRadius:15}}
+                    onChangeText={(text) => setsecretCode(text)}
+                    value={secretCode}
+                    keyboardType= {"numeric"}
+                    maxLength = {8}
+                    placeholder = {'Sheno numerin e telefonit 4xxxxxxxx'}
+                  />
+
+
+
 
       </View>
 
+
+      <View style={{flexDirection: 'row', marginBottom: 2, padding:20,
+
+              justifyContent: 'space-between',  alignItems: 'center'}}>
+
+
+              <View style={[styles.centerElement, {width: 125}]}>
+              <View style={{borderWidth: 3, borderColor: '#ececec', padding: 10, borderRadius: 25}}>
+                  <TouchableOpacity  onPress={() => checkphone(secretCode , amount)}>
+                <Text style={{fontSize: 12}}>Genero Kodin per transfer </Text>
+                  </TouchableOpacity>
+                  
+              </View>
+              </View>
+
+
+              <View style={[styles.centerElement, {width: 125}]}>
+              <View style={{borderWidth: 3, borderColor: '#ececec', padding:10 , borderRadius: 25}}>
+                <TouchableOpacity  onPress={async () => await handlePress('tel:*101' +'${%23}' )}>
+                <Text style={{fontSize: 12}}>Kontrollo gjendjen e numrit tuaj</Text>
+                  </TouchableOpacity>
+              </View>
+              </View>
+
+
+              </View> 
      
-    </View>
+      </View>
+
+    </ScrollView>
+
+    </ImageBackground>
+
+    </SafeAreaView>
 
 
   );

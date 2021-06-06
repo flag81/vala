@@ -181,7 +181,7 @@ import styles from './styles';
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
-						<Text style={{fontSize: 15}}>3P Aplikacioni</Text>
+						<Text style={{fontSize: 15, fontWeight: "bold"}}>3P Aplikacioni</Text>
 						<Text numberOfLines={2} style={{color: 'black'}}>
 							Klientëve ju ofron mundësinë e një kredie hua
 							deri në 3 Euro  pa asnjë provizion shtese.
@@ -199,7 +199,7 @@ import styles from './styles';
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
-						<Text style={{fontSize: 15}}>VALA TV</Text>
+						<Text style={{fontSize: 15,fontWeight: "bold"}}>VALA TV</Text>
 						<Text numberOfLines={2} style={{color: 'black'}}>
 							Klientëve ju ofron mundësinë e një kredie hua
 							deri në 3 Euro  pa asnjë provizion shtese.
@@ -234,7 +234,7 @@ import styles from './styles';
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
-						<Text style={{fontSize: 15}}>Qendra e thirrjeve</Text>
+						<Text style={{fontSize: 15, fontWeight: "bold"}}>Qendra e thirrjeve</Text>
 						<Text numberOfLines={1} style={{color: 'black'}}>Na kontakto ne qendren e thirrjeve</Text>
 					</View>
 

@@ -69,7 +69,7 @@ const FillPage= ({ navigation }) => {
             <Text style={styles.label}>Sheno numerin:</Text>
 
               <TextInput
-                style={{flex:1,  borderWidth: 1, height:40, marginLeft:10, padding:10}}
+                style={{flex:1,  borderWidth: 1, height:40, marginLeft:10, padding:10,  borderRadius:15}}
                 onChangeText={(text) => setsecretCode(text)}
                 value={secretCode}
                 keyboardType= {"numeric"}
@@ -94,7 +94,7 @@ const FillPage= ({ navigation }) => {
          <View style={[styles.centerElement, {width: 125}]}>
            <View style={{borderWidth: 3, borderColor: '#ececec', padding: 10, borderRadius: 25}}>
                <TouchableOpacity  onPress={() => checkcode(secretCode)}>
-             <Text style={{fontSize: 12}}>Genero Kodin per mbushje </Text>
+                  <Text style={{fontSize: 12}}>Genero Kodin per mbushje </Text>
                </TouchableOpacity>
                
            </View>
