@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { StyleSheet, Button, Text, View, TouchableOpacity, Image, ScrollView,ImageBackground, Dimensions } from 'react-native';
-import { Ionicons, AntDesign, MaterialCommunityIcons, Feather, SimpleLineIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons} from '@expo/vector-icons';
 
 
 import { SafeAreaView } from 'react-native';

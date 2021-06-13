@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { StyleSheet, Button, Text, View, TouchableOpacity,  ScrollView, ImageBackground } from 'react-native';
-import { Ionicons,  MaterialCommunityIcons } from '@expo/vector-icons';
+import { StyleSheet,  Text, View, TouchableOpacity,  ScrollView, ImageBackground } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 import { SafeAreaView } from 'react-native';
