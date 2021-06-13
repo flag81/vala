@@ -2,9 +2,8 @@ import * as React from 'react';
 
 import  { useState } from 'react';
 
-import { Text, View, StyleSheet, TextInput, Button,Alert, SafeAreaView, ScrollView, Dimensions, ImageBackground, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TextInput, Alert, SafeAreaView, ScrollView, Dimensions, ImageBackground, TouchableOpacity } from 'react-native';
 
- import RNPickerSelect from "react-native-picker-select";
 
 import Constants from 'expo-constants';
 import { handlePress} from '../util';

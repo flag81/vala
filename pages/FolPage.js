@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StyleSheet, Button, Text, View, TouchableOpacity, Image, ScrollView, ImageBackground } from 'react-native';
+import { StyleSheet, Button, Text, View, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
 import { Ionicons, AntDesign, MaterialCommunityIcons, Feather, SimpleLineIcons } from '@expo/vector-icons';
 
 
