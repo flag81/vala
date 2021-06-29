@@ -21,13 +21,15 @@ import ThreePPage from "./pages/ThreePPage";
 import ValaTVPage from "./pages/ValaTVPage";
 
 
+import { View,  StyleSheet} from "react-native";
 
 
 
-import { NavigationContainer } from '@react-navigation/native';
+//import { NavigationContainer } from '@react-navigation/native';
 
 import NavigationDrawerStructure from "./NavigationDrawerStructure";
 import CallCenterPage from "./pages/CallCenterPage";
+import ClipPage from "./pages/ClipPage";
 
 const Stack = createStackNavigator();
 
@@ -50,10 +52,20 @@ const MainStackNavigator = ({ navigation }) => {
         headerLeft: () => (
           <NavigationDrawerStructure navigationProps={navigation} />
         ),
-        headerStyle: {
-          backgroundColor: 'rgba(22, 23, 104, 0.8)',
-        },
-        headerTintColor: '#fff', //Set Header text color
+
+
+        headerBackground: () => (
+          <View
+            style={{
+              backgroundColor: 'rgba(22, 23, 104, 0.8)',
+              ...StyleSheet.absoluteFillObject,
+              
+            }}
+          />
+        ),
+
+        headerTransparent: true,
+        headerTintColor: 'white', //Set Header text color
         headerTitleStyle: {
           fontWeight: 'bold', //Set Header text style
         },
@@ -65,8 +77,7 @@ const MainStackNavigator = ({ navigation }) => {
 
         options= {{
           title: 'Menu Kryesore',
-          
-
+          headerTransparent: true,         
       
         }}
 
@@ -80,6 +91,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
               title: 'Pakot INT',
+              headerTransparent: true, 
 
             }}
       />
@@ -88,6 +100,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Pakot FOL',
+            headerTransparent: true, 
 
             }}
       />
@@ -96,6 +109,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Mbushe llogarine',
+            headerTransparent: true, 
 
             }}
       />
@@ -105,6 +119,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Transfero mbushje',
+            headerTransparent: true, 
 
             }}
       />
@@ -113,6 +128,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Pako me Shqiperine',
+            headerTransparent: true, 
 
             }}
       />
@@ -122,6 +138,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Pako Familiare',
+            headerTransparent: true, 
 
             }}
       />
@@ -130,6 +147,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Rrjete Sociale',
+            headerTransparent: true, 
 
             }}
       />
@@ -138,6 +156,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: '3P App',
+            headerTransparent: true, 
 
             }}
       />
@@ -146,6 +165,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Vala TV',
+            headerTransparent: true, 
 
             }}
       />
@@ -155,6 +175,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Registerohu',
+            headerTransparent: true, 
 
             }}
       />
@@ -165,6 +186,7 @@ const MainStackNavigator = ({ navigation }) => {
         options= {{
 
         title: 'Pako Classic',
+        headerTransparent: true, 
 
       }}/>
 
@@ -173,6 +195,7 @@ const MainStackNavigator = ({ navigation }) => {
       options= {{
 
       title: 'Sherbimi Te lutem me thirr',
+      headerTransparent: true, 
 
       }}/>
 
@@ -181,6 +204,7 @@ const MainStackNavigator = ({ navigation }) => {
       options= {{
 
       title: 'Pako NTrip',
+      headerTransparent: true, 
 
       }}/>
 
@@ -189,6 +213,7 @@ const MainStackNavigator = ({ navigation }) => {
       options= {{
 
       title: 'Qendra e thirrjeve',
+      headerTransparent: true, 
 
       }}/>
 
@@ -198,6 +223,17 @@ const MainStackNavigator = ({ navigation }) => {
       options= {{
 
       title: 'Thirrjet e humbura',
+      headerTransparent: true, 
+
+      }}/>
+
+
+<Stack.Screen name="ClipPage" component={ClipPage} 
+      
+      options= {{
+
+      title: 'Sherbimi CLIP',
+      headerTransparent: true, 
 
       }}/>
 
