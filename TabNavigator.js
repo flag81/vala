@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { MainStackNavigator, ContactStackNavigator, PakoStackNavigator } from "./StackNavigator";
 
-import { TouchableOpacity, ScrollView,SafeAreaView } from 'react-native';
+import { TouchableOpacity, ScrollView,SafeAreaView, View } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -11,19 +11,21 @@ import {makeCall, writeFacebook} from './util';
 
 import { Ionicons } from '@expo/vector-icons';
 
-import { PakoPage } from "./pages/PakoPage";
+import  PakoPage  from "./pages/PakoPage";
 
 const Tab = createBottomTabNavigator();
 
 
 
-const BottomTabNavigator = (navigation) => {
+
+
+const BottomTabNavigator = () => {
 
 
   return (
     <Tab.Navigator tabBarOptions={{
       style: {
-        backgroundColor: 'rgba(22, 23, 104, 0.8)',
+        backgroundColor: 'rgba(48, 51, 118, 0.8)',
         position: 'absolute',
         borderTopWidth: 0,
       
@@ -44,16 +46,29 @@ const BottomTabNavigator = (navigation) => {
 
 
 
-<Tab.Screen name="Pako" component={PakoStackNavigator} 
+<Tab.Screen  name="Pako" component={MainStackNavigator} 
+
+listeners={({ navigation }) => ({
+  tabPress: e => {
+
+    //console.log("exe")
+    // Prevent default action
+    e.preventDefault();
+
+    // Do something with the `navigation` object
+    navigation.navigate('Home',{screen:"Pako"});
+  },
+})}
+
 
 
         options={{
-
           tabBarIcon: (props) => (
             <Ionicons name="md-checkbox-outline" size={props.size} color={props.color} />
-        ),
+            ),
 
-          title: 'Aktivizo Pako',
+              title: 'Aktivizo Pako',
+            
 
             }}
 /> 
