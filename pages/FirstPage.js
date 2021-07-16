@@ -1,16 +1,30 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView,SafeAreaView, Image, ImageBackground, Dimensions } from 'react-native';
 
+import {
+	useIsFocused 
+  } from '@react-navigation/native';
 
 import { handlePress} from '../util';
 import styles from './styles';
 
 
 
- const FirstPage = ({ navigation }) => {
+const FirstPage = ({ navigation }) => {
 
 	const DeviceWidth = Dimensions.get('window').width ;
 	const DeviceHeight = Dimensions.get('window').height ;
+
+	const scrollViewRef = useRef();
+
+	const isFocused = useIsFocused();
+	useEffect(() => {
+		if (isFocused) {
+			scrollViewRef.current?.scrollTo({x:0, y:0, animated: true});
+		}
+	}, [isFocused]);
+
+
 		
 	return (
 
@@ -23,49 +37,39 @@ import styles from './styles';
 			style={{ flex: 1, width: '100%', height: '100%'}} 
 			imageStyle= {{opacity:0.4}} > 
      
-	 		<ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
+	 		<ScrollView ref={scrollViewRef} style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
 
-		
+			 <View style={{height: 100}} />
       
 				<View style={{flex: 1, width: '100%', height: '100%' }}>	
-      
-			 
-					<View style={{flexDirection: 'row', justifyContent: 'space-between',   marginBottom: 10, alignContent:'center'}}>
-						<View style={{ justifyContent: "center",alignItems: "center" , width:'100%'}}>
-							<Text style={{fontSize: 18, fontWeight: "bold", color: '#000', paddingLeft: 15, textDecorationColor: "red" }}>
-							Zgjidh sherbimet</Text>
-						</View>
-
-					</View>
-
-				
+      		
 
 				<TouchableOpacity style={{flexDirection: 'row', marginBottom: 2, height: 80}} 
 
           			onPress={() => navigation.navigate('Pako')}>
 
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
 
-						<Image source={require('../images/briefcase-check.png')} tintColor={"#FF1493"}/>
+						<Image source={require('../images/briefcase-check.png')} tintColor={"#BF1E64"}/>
            
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
 						<Text style={{fontSize: 15, fontWeight: "bold"}}>Ativizo Pako</Text>
-						<Text numberOfLines={1} style={{color: 'black'}}>INT M, INT S , Fol S, Trip etc</Text>
+						<Text numberOfLines={1} style={{color: 'black'}}>INT M, INT S , Fol S, Trip ...</Text>
 					</View>
 				</TouchableOpacity>
 
 				<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 80}} onPress={() => navigation.navigate('FillPage')}> 
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
-							<Image source={require('../images/clipboard-plus.png')} tintColor={"#FF1493"}/>
+						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
+							<Image source={require('../images/clipboard-plus.png')} tintColor={"#BF1E64"}/>
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
 						<Text style={{fontSize: 15, fontWeight: "bold"}}>Mbushe Llogarine</Text>
-						<Text numberOfLines={1} style={{color: 'black'}}> SMS, gervishese, e-shop </Text>
+						<Text numberOfLines={1} style={{color: 'black'}}> Kartela gervishese </Text>
 					</View>
 				</TouchableOpacity>
 
@@ -74,24 +78,30 @@ import styles from './styles';
          				onPress={async () => await handlePress('tel:*101'+'${%23}')} >
 
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
-							<Image source={require('../images/checkbox-multiple-marked-outline.png')} tintColor={"#FF1493"}/>
+						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
+							<Image source={require('../images/checkbox-multiple-marked-outline.png')} tintColor={"#BF1E64"}/>
             				
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
 						<Text style={{fontSize: 15, fontWeight: "bold"}}>Gjendja e llogarise</Text>
-						<Text numberOfLines={3} style={{color: 'black'}}>Kliko per te gjeneruar kodin per gjendejse se llogarise</Text>
+						<Text numberOfLines={3} style={{color: 'black'}}>Thirr ne numrin e gjeneruar</Text>
 					</View>
 
 				</TouchableOpacity>
 
         
 				<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 80}} 
-					onPress={async () => await handlePress('https://shop.kosovotelecom.com/')} >
+					
+					onPress={() => navigation.navigate('ShopPage')}
+					//onPress={async () => await handlePress('https://shop.kosovotelecom.com/')} 
+					
+					
+					>
+
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
-							<Image source={require('../images/basket.png')} tintColor={"#FF1493"}/>
+						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
+							<Image source={require('../images/basket.png')} tintColor={"#BF1E64"}/>
 							
 						</View>
 					</View>
@@ -111,14 +121,14 @@ import styles from './styles';
          			
 
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
             				
-							<Image source={require('../images/phone-missed.png')} tintColor={"#FF1493"}/>
+							<Image source={require('../images/phone-missed.png')} tintColor={"#BF1E64"}/>
 							
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
-						<Text style={{fontSize: 15, fontWeight: "bold"}}>Thirrjet e hunbura</Text>
+						<Text style={{fontSize: 15, fontWeight: "bold"}}>Thirrjet e humbura</Text>
 						<Text numberOfLines={3} style={{color: 'black'}}>Aktivizimi i shërbimit për thirrjet e humbura</Text>
 					</View>
 
@@ -128,10 +138,10 @@ import styles from './styles';
         		<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 80}} 
 				onPress={() => navigation.navigate('TransferPage')}> 
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
 
 							
-							<Image source={require('../images/account-arrow-right.png')} tintColor={"#FF1493"}/>
+							<Image source={require('../images/account-arrow-right.png')} tintColor={"#BF1E64"}/>
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
@@ -144,9 +154,9 @@ import styles from './styles';
 				<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 80}} 
 				onPress={() => navigation.navigate('CallMePage')}> 
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
 							
-							<Image source={require('../images/account-arrow-left.png')} tintColor={"#FF1493"}/>
+							<Image source={require('../images/account-arrow-left.png')} tintColor={"#BF1E64"}/>
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
@@ -175,16 +185,15 @@ import styles from './styles';
 				<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 80}}    
 	  				onPress={() => navigation.navigate('ThreePPage')}>
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
 							
-							<Image source={require('../images/account-group.png')} tintColor={"#FF1493"}/>
+							<Image source={require('../images/account-group.png')} tintColor={"#BF1E64"}/>
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
 						<Text style={{fontSize: 15, fontWeight: "bold"}}>3P Aplikacioni</Text>
 						<Text numberOfLines={2} style={{color: 'black'}}>
-							Klientëve ju ofron mundësinë e një kredie hua
-							deri në 3 Euro  pa asnjë provizion shtese.
+							Merr kredie hua deri në 3 Eu
 							</Text>
 						
 					</View>
@@ -193,16 +202,15 @@ import styles from './styles';
 				<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 80}}    
 	  				onPress={() => navigation.navigate('ValaTVPage')}>
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
 							
-							<Image source={require('../images/account-group.png')} tintColor={"#FF1493"}/>
+							<Image source={require('../images/account-group.png')} tintColor={"#BF1E64"}/>
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
 						<Text style={{fontSize: 15,fontWeight: "bold"}}>VALA TV</Text>
 						<Text numberOfLines={2} style={{color: 'black'}}>
-							Klientëve ju ofron mundësinë e një kredie hua
-							deri në 3 Euro  pa asnjë provizion shtese.
+							Shkarko aplikacionin
 							</Text>
 						
 					</View>
@@ -212,9 +220,9 @@ import styles from './styles';
       			<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 80}}    
 	  				onPress={() => navigation.navigate('SocialPage')}>
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
 							
-							<Image source={require('../images/account-group.png')} tintColor={"#FF1493"}/>
+							<Image source={require('../images/account-group.png')} tintColor={"#BF1E64"}/>
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
@@ -228,9 +236,9 @@ import styles from './styles';
 				<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 80}}    
 	  				onPress={() => navigation.navigate('CallCenterPage')}>
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
 						
-							<Image source={require('../images/phone.png')} tintColor={"#FF1493"}/>
+							<Image source={require('../images/phone.png')} tintColor={"#BF1E64"}/>
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
@@ -243,7 +251,7 @@ import styles from './styles';
 				
 				<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 50}}>
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
 						
 							
 						</View>
@@ -252,6 +260,7 @@ import styles from './styles';
 						<Text style={{fontSize: 15}}></Text>
 						<Text numberOfLines={1} style={{color: 'black'}}></Text>
 					</View>
+
 
 				</TouchableOpacity>
 

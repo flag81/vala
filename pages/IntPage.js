@@ -46,6 +46,8 @@ import styles from './styles';
 			
 			<ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
 
+			<View style={{height: 100}} />
+
 			<View style={{flex: 1, width: '100%', height: '100%' }}>
 
 				<View style={{flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10}}>
