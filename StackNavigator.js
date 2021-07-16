@@ -2,6 +2,9 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
+
+
+
 import FirstPage from "./pages/FirstPage";
 import PakoPage from "./pages/PakoPage";
 import Form from "./pages/Form";
@@ -19,17 +22,16 @@ import NtripPage from "./pages/NtripPage";
 import MissedCallsPage from "./pages/MissedCallsPage";
 import ThreePPage from "./pages/ThreePPage";
 import ValaTVPage from "./pages/ValaTVPage";
-
-
-import { View,  StyleSheet} from "react-native";
+import ShopPage from "./pages/ShopPage";
 
 
 
-//import { NavigationContainer } from '@react-navigation/native';
+import { StyleSheet,View} from 'react-native';
+
+import { NavigationContainer } from '@react-navigation/native';
 
 import NavigationDrawerStructure from "./NavigationDrawerStructure";
 import CallCenterPage from "./pages/CallCenterPage";
-import ClipPage from "./pages/ClipPage";
 
 const Stack = createStackNavigator();
 
@@ -52,8 +54,6 @@ const MainStackNavigator = ({ navigation }) => {
         headerLeft: () => (
           <NavigationDrawerStructure navigationProps={navigation} />
         ),
-
-
         headerBackground: () => (
           <View
             style={{
@@ -63,12 +63,12 @@ const MainStackNavigator = ({ navigation }) => {
             }}
           />
         ),
-
-        headerTransparent: true,
-        headerTintColor: 'white', //Set Header text color
-        headerTitleStyle: {
-          fontWeight: 'bold', //Set Header text style
-        },
+          headerTransparent: true,
+          headerTintColor: 'white', //Set Header text color
+          headerTitleStyle: {
+            fontWeight: 'bold', //Set Header text style
+          },
+        
       }}>
     
     
@@ -77,8 +77,9 @@ const MainStackNavigator = ({ navigation }) => {
 
         options= {{
           title: 'Menu Kryesore',
-          headerTransparent: true,         
-      
+          //headerShown: true,
+          headerTransparent: true,          
+
         }}
 
         
@@ -91,7 +92,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
               title: 'Pakot INT',
-              headerTransparent: true, 
+              headerTransparent: true,
 
             }}
       />
@@ -100,7 +101,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Pakot FOL',
-            headerTransparent: true, 
+            headerTransparent: true,
 
             }}
       />
@@ -109,7 +110,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Mbushe llogarine',
-            headerTransparent: true, 
+            headerTransparent: true,
 
             }}
       />
@@ -119,7 +120,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Transfero mbushje',
-            headerTransparent: true, 
+            headerTransparent: true,
 
             }}
       />
@@ -128,7 +129,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Pako me Shqiperine',
-            headerTransparent: true, 
+            headerTransparent: true,
 
             }}
       />
@@ -138,7 +139,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Pako Familiare',
-            headerTransparent: true, 
+            headerTransparent: true,
 
             }}
       />
@@ -147,7 +148,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Rrjete Sociale',
-            headerTransparent: true, 
+            headerTransparent: true,
 
             }}
       />
@@ -156,7 +157,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: '3P App',
-            headerTransparent: true, 
+            headerTransparent: true,
 
             }}
       />
@@ -165,7 +166,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Vala TV',
-            headerTransparent: true, 
+            headerTransparent: true,
 
             }}
       />
@@ -175,7 +176,7 @@ const MainStackNavigator = ({ navigation }) => {
             options= {{
 
             title: 'Registerohu',
-            headerTransparent: true, 
+            headerTransparent: true,
 
             }}
       />
@@ -186,7 +187,7 @@ const MainStackNavigator = ({ navigation }) => {
         options= {{
 
         title: 'Pako Classic',
-        headerTransparent: true, 
+        headerTransparent: true,
 
       }}/>
 
@@ -195,7 +196,7 @@ const MainStackNavigator = ({ navigation }) => {
       options= {{
 
       title: 'Sherbimi Te lutem me thirr',
-      headerTransparent: true, 
+      headerTransparent: true,
 
       }}/>
 
@@ -204,7 +205,17 @@ const MainStackNavigator = ({ navigation }) => {
       options= {{
 
       title: 'Pako NTrip',
-      headerTransparent: true, 
+      headerTransparent: true,
+
+      }}/>
+
+
+<Stack.Screen name="ShopPage" component={ShopPage} 
+      
+      options= {{
+
+      title: 'Blej mbushje online',
+      headerTransparent: true,
 
       }}/>
 
@@ -213,7 +224,7 @@ const MainStackNavigator = ({ navigation }) => {
       options= {{
 
       title: 'Qendra e thirrjeve',
-      headerTransparent: true, 
+      headerTransparent: true,
 
       }}/>
 
@@ -222,18 +233,8 @@ const MainStackNavigator = ({ navigation }) => {
       
       options= {{
 
-      title: 'Thirrjet e humbura',
-      headerTransparent: true, 
-
-      }}/>
-
-
-<Stack.Screen name="ClipPage" component={ClipPage} 
-      
-      options= {{
-
-      title: 'Sherbimi CLIP',
-      headerTransparent: true, 
+        title: 'Thirrjet e humbura',
+        headerTransparent: true,
 
       }}/>
 
@@ -246,7 +247,8 @@ const MainStackNavigator = ({ navigation }) => {
       
       options= {{
 
-        title: 'Aktivizo Pako',
+          title: 'Aktivizo Pako',
+          headerTransparent: true,
 
       }}
       
@@ -258,56 +260,34 @@ const MainStackNavigator = ({ navigation }) => {
   );
 }
 
-const ContactStackNavigator = ({ navigation }) => {
-  return (
-    <Stack.Navigator 
-    
 
-        screenOptions={{
-        headerLeft: () => (
-          <NavigationDrawerStructure navigationProps={navigation} />
-        ),
-        headerStyle: {
-          backgroundColor: '#0D1688', //Set Header color
-        },
-        headerTintColor: '#fff', //Set Header text color
-        headerTitleStyle: {
-          fontWeight: 'bold', //Set Header text style
-        },
-      }}
-    
-    >
-
-      <Stack.Screen name="Form" component={Form} />
-      <Stack.Screen name="Home" component={FirstPage} />
-      <Stack.Screen name="IntPage" component={IntPage} />
-      <Stack.Screen name="FolPage" component={FolPage} />
-     
-
-    </Stack.Navigator>
-  );
-}
 
 
 
 const PakoStackNavigator = ({ navigation }) => {
   return (
-    <Stack.Navigator 
-
+    <Stack.Navigator initialRouteName="PakoPage"
+    
         screenOptions={{
         headerLeft: () => (
           <NavigationDrawerStructure navigationProps={navigation} />
         ),
-        headerStyle: {
-          backgroundColor: '#0D1688', //Set Header color
-        },
-        headerTintColor: '#fff', //Set Header text color
-        headerTitleStyle: {
-          fontWeight: 'bold', //Set Header text style
-        },
-      }}
-    
-    >
+        headerBackground: () => (
+          <View
+            style={{
+              backgroundColor: 'rgba(22, 23, 104, 0.8)',
+              ...StyleSheet.absoluteFillObject,
+              
+            }}
+          />
+        ),
+          headerTransparent: true,
+          headerTintColor: 'white', //Set Header text color
+          headerTitleStyle: {
+            fontWeight: 'bold', //Set Header text style
+          },
+        
+      }}>
 
 
       <Stack.Screen name="PakoPage" component={PakoPage} 
@@ -317,12 +297,9 @@ const PakoStackNavigator = ({ navigation }) => {
       />
 
 
-      <Stack.Screen name="IntPage" component={IntPage} />
-      <Stack.Screen name="FolPage" component={FolPage} />
-
     </Stack.Navigator>
   );
 }
 
 
-export { MainStackNavigator, ContactStackNavigator,PakoStackNavigator };
+export { MainStackNavigator, PakoStackNavigator };
