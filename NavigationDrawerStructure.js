@@ -1,29 +1,37 @@
 import * as React from 'react';
 import { View, TouchableOpacity, Image} from 'react-native';
-
-import { useNavigation} from '@react-navigation/native';
-
-
+import { useNavigation,  useRoute} from '@react-navigation/native';
 
 
 const  BackArrow = (props) => {
-  const isFirst = props.isFirst;
 
-  //Alert.alert(isFirst)
-  //console.log(isFirst);
+
+
+  const route = useRoute();
+  //console.log('---'+route.name);
+
+  
+  //console.log(props.navigation);
+
+  if (route.name ==="Home")  
+  { 
+    first = false
+  }
+  else
+  {
+    first = true
+  }
 
   return (
 
     <>
 
-    { isFirst   
+    { first  
       ? <Image source={require('./images/arrow-left-circle.png')} tintColor={'white'} /> 
       : <Image source={require('./images/home-outline.svg')} tintColor={'white'} />
     }
 
     </>
-
-
 
 
   )
@@ -32,14 +40,15 @@ const  BackArrow = (props) => {
 
 
 
-const NavigationDrawerStructure = () => {
+const NavigationDrawerStructure = (props) => {
   //Structure for the navigatin Drawer
 
 
   const navigation = useNavigation();
 
 
- //console.log(navigation.canGoBack());
+
+//console.log();
 
 
 
@@ -65,7 +74,7 @@ const NavigationDrawerStructure = () => {
 
         {/*Donute Button Image */}
         
-        <BackArrow isFirst={navigation.canGoBack()}/>
+        <BackArrow />
 
         
  

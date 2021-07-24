@@ -1,17 +1,15 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { MainStackNavigator, ContactStackNavigator, PakoStackNavigator } from "./StackNavigator";
+import { MainStackNavigator,  PakoStackNavigator } from "./StackNavigator";
 
-import { TouchableOpacity, ScrollView,SafeAreaView, View } from 'react-native';
-
-import { NavigationContainer } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native';
 
 import {makeCall, writeFacebook} from './util';
 
 import { Ionicons } from '@expo/vector-icons';
 
-import  PakoPage  from "./pages/PakoPage";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const Tab = createBottomTabNavigator();
 
@@ -24,10 +22,16 @@ const BottomTabNavigator = () => {
 
   return (
     <Tab.Navigator tabBarOptions={{
-      style: {
-        backgroundColor: 'rgba(48, 51, 118, 0.8)',
-        position: 'absolute',
-        borderTopWidth: 0,
+
+        activeTintColor:"blue",
+        inactiveTintColor:"gray",
+
+
+        style: {
+          backgroundColor: 'rgba(48, 51, 118, 0.8)',
+          position: 'absolute',
+          borderTopWidth: 0,
+        
       
       }
     }}>
@@ -44,38 +48,31 @@ const BottomTabNavigator = () => {
       />
 
 
-
-
-<Tab.Screen  name="Pako" component={MainStackNavigator} 
-
-listeners={({ navigation }) => ({
-  tabPress: e => {
-
-    //console.log("exe")
-    // Prevent default action
-    e.preventDefault();
-
-    // Do something with the `navigation` object
-    navigation.navigate('Home',{screen:"Pako"});
-  },
-})}
-
+<Tab.Screen  name="Pako" component={PakoStackNavigator} 
 
 
         options={{
-          tabBarIcon: (props) => (
-            <Ionicons name="md-checkbox-outline" size={props.size} color={props.color} />
-            ),
+          tabBarIcon: (props) => 
+      
+              (
+                <Ionicons name="md-checkbox-outline" size={props.size} color={props.color}  />
+              )
+          
+            ,
 
               title: 'Aktivizo Pako',
             
-
             }}
+
+            
+
 /> 
+
+
 
  
 
-<Tab.Screen name="Face" component={ContactStackNavigator} 
+<Tab.Screen name="Face" component={PakoStackNavigator} 
 
      listeners={{
         tabPress: e => {
@@ -103,7 +100,7 @@ listeners={({ navigation }) => ({
 
 
 
-  <Tab.Screen name="Contact" component={ContactStackNavigator} 
+  <Tab.Screen name="Contact" component={MainStackNavigator} 
 
 
 
