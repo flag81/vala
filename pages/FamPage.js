@@ -33,7 +33,7 @@ const DeviceHeight = Dimensions.get('window').height ;
 				
 
             <ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
-
+			<View style={{height: 100}} />
 		
       
 			<View style={{flex: 1, width: DeviceWidth, height: DeviceHeight }}>

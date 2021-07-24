@@ -20,6 +20,7 @@ import styles from './styles';
 				imageStyle= {{opacity:0.5}}>
 	
 				<ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
+				<View style={{height: 100}} />
 		  
 				<View style={{flex: 1, width: '100%', height: '100%' }}>
 
@@ -42,13 +43,9 @@ import styles from './styles';
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
 						<Text style={{fontSize: 15}}>Orari</Text>
-						<Text  style={{color: '#8f8f8f'}}>
+						
+						<Text> Hene - E diele: non stop 24/7 {"\n"}</Text>
 
-                        Hënë - E diele: non stop 24/7 {"\n"}
-
-                       
-
-          </Text>
 					</View>
 				</TouchableOpacity>
 
@@ -77,11 +74,12 @@ import styles from './styles';
               				</TouchableOpacity>
 						</View>
 					</View>
+					
 
 					<View style={[styles.centerElement, {width: 100, height:100}]}>
 						<View style={{borderWidth: 3, borderColor: '#ececec', padding:10 , borderRadius: 25, height:100, width:100, justifyContent: 'center'}}>
 							<TouchableOpacity  onPress={async () => await handlePress('tel:080016000')}>
-                				<Text style={{fontSize: 12, textAlign:'center'}}>INSTUCIONE</Text>
+                				<Text style={{fontSize: 12, textAlign:'center'}}>INSTITUCIONE</Text>
               				</TouchableOpacity>
 						</View>
 					</View>

@@ -1,17 +1,15 @@
 
 import React from 'react';
-import { StyleSheet, Button, Text, View, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
-import { Ionicons, AntDesign, MaterialCommunityIcons, Feather, SimpleLineIcons } from '@expo/vector-icons';
+import { StyleSheet,  Text, View, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
+import { Ionicons,  MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 import { SafeAreaView } from 'react-native';
 
-import {onPressButton,onLongPressButton, handlePress} from '../util';
-
+import { handlePress} from '../util';
 
 
 import styles from './styles';
-
 
  const IntPage = ({ navigation }) => {
 
@@ -25,6 +23,7 @@ import styles from './styles';
 				imageStyle= {{opacity:0.5}}>
 	
 				<ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
+				<View style={{height: 100}} />
 		  
 				<View style={{flex: 1, width: '100%', height: '100%' }}>
 

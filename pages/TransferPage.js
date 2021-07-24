@@ -72,7 +72,7 @@ const TransferPage= ({ navigation }) => {
      
 	 		  <ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
 
-		
+         <View style={{height: 100}} />
       
 				<View style={{flex: 1, width: '100%', height: '100%' }}>
 
@@ -96,13 +96,16 @@ const TransferPage= ({ navigation }) => {
       <View style={{ marginTop:20, fontSize:15, fontWeight:'black', color:'black', padding:10 }}>
           <Text>Shuma: {amount} EU</Text>
             
-          <View style={{ borderWidth: 1, borderColor: 'black', overflow: 'hidden', width:'80%'}}>
+          <View style={{ borderWidth: 1, borderColor: 'black', overflow: 'hidden', width:'80%', height:'30%'}}>
                <RNPickerSelect
-          style = {pickerStyle}
+
+                  style={pickerStyle}
+          
                  placeholder={{ label: "Zgjidhe shumen", value: null}}
                 
                  value={amount}
                  onValueChange={(value) => setAmount(value)}
+                 useNativeAndroidPickerStyle={false}
                  items =
                  {[
                      { label: "1 EU", value: "1" },
@@ -205,7 +208,7 @@ const pickerStyle = {
   inputAndroid: {
       color: 'black',
       paddingHorizontal: 10,
-      borderRadius: 15,
+      borderRadius: 25,
   },
 };
 

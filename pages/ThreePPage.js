@@ -13,7 +13,6 @@ const ThreePPage = ({ navigation }) => {
 	
 	return (
 
-
 		<SafeAreaView style={{ flex: 1 }}>
 
 		<ImageBackground source={require('../images/pako-familjare.png')}   
@@ -21,6 +20,8 @@ const ThreePPage = ({ navigation }) => {
 			imageStyle= {{opacity:0.5}}>
 
 			<ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
+			<View style={{height: 100}} />
+
       
 			<View style={{flex: 1, width: '100%', height: '100%' }}>
 
@@ -52,18 +53,6 @@ const ThreePPage = ({ navigation }) => {
 							</View>
 						</TouchableOpacity>
         
-
-
-
-
-
-
-        
-
-
-
-
-
 
 				</View>
 

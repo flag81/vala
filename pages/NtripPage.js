@@ -25,7 +25,8 @@ import styles from './styles';
 				imageStyle= {{opacity:0.5}}>
 	
 				<ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
-		  
+				
+				<View style={{height: 100}} />
 				<View style={{flex: 1, width: '100%', height: '100%' }}>
 
 
@@ -90,20 +91,11 @@ import styles from './styles';
         </View>
 
 			
+		<View style={{flexDirection: 'row',  marginBottom: 2, padding:20, height: 100,
 
+		justifyContent: 'space-between',  alignItems: 'center'
 
-      
-
-
-
-
-
-
-<View style={{flexDirection: 'row',  marginBottom: 2, padding:20, height: 100,
-
- justifyContent: 'space-between',  alignItems: 'center'
-
-}}>
+		}}>
 
 
 					<View style={[styles.centerElement, {width: 125}]}>
