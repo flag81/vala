@@ -5,7 +5,7 @@ import { MainStackNavigator,  PakoStackNavigator } from "./StackNavigator";
 
 import { TouchableOpacity } from 'react-native';
 
-import {makeCall, writeFacebook} from './util';
+import {makeCall, writeFacebook, sendSMS} from './util';
 
 import { Ionicons } from '@expo/vector-icons';
 
@@ -23,7 +23,7 @@ const BottomTabNavigator = () => {
   return (
     <Tab.Navigator tabBarOptions={{
 
-        activeTintColor:"blue",
+        activeTintColor:'#fffafa',
         inactiveTintColor:"gray",
 
 
@@ -55,7 +55,7 @@ const BottomTabNavigator = () => {
           tabBarIcon: (props) => 
       
               (
-                <Ionicons name="md-checkbox-outline" size={props.size} color={props.color}  />
+                <Ionicons name="md-add-circle" size={props.size} color={props.color}  />
               )
           
             ,
@@ -98,7 +98,36 @@ const BottomTabNavigator = () => {
 
 />
 
+<Tab.Screen name="Status" component={MainStackNavigator} 
 
+
+listeners={{
+   tabPress: e => {
+     e.preventDefault(); // Use this to navigate somewhere else
+
+
+     
+     sendSMS();
+     //alert("flag")
+     //console.log("Foo tab bar button pressed")
+   },
+ }}
+
+
+ options={{
+
+     tabBarIcon: (props) => (
+     <Ionicons name="md-checkmark" size={props.size} color={props.color} />
+     ),
+
+     title: 'Gjendja',
+     tabBarButton: (props) => (<TouchableOpacity  {...props} />),
+ }}
+
+
+
+
+/>
 
   <Tab.Screen name="Contact" component={MainStackNavigator} 
 
