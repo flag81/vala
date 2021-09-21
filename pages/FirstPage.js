@@ -33,7 +33,7 @@ const FirstPage = ({ navigation }) => {
 
      	<SafeAreaView style={styling.container1}>
 
-		<ImageBackground source={require('../images/pako-familjare.png')}   
+		<ImageBackground source={require('../images/pako-familjare1.png')}   
 			style={{ flex: 1, width: '100%', height: '100%'}} 
 			imageStyle= {{opacity:0.4}} > 
      
@@ -80,7 +80,6 @@ const FirstPage = ({ navigation }) => {
 					<View style={[styles.centerElement, {width: 75}]}>
 						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
 							<Image source={require('../images/checkbox-multiple-marked-outline.png')} tintColor={"#BF1E64"}/>
-            				
 						</View>
 					</View>
 					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
@@ -199,22 +198,7 @@ const FirstPage = ({ navigation }) => {
 					</View>
 				</TouchableOpacity>
 
-				<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 80}}    
-	  				onPress={() => navigation.navigate('ValaTVPage')}>
-					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#303376', padding: 7, borderRadius: 25}}>
-							
-							<Image source={require('../images/account-group.png')} tintColor={"#BF1E64"}/>
-						</View>
-					</View>
-					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
-						<Text style={{fontSize: 15,fontWeight: "bold"}}>VALA TV</Text>
-						<Text numberOfLines={2} style={{color: 'black'}}>
-							Shkarko aplikacionin
-							</Text>
-						
-					</View>
-				</TouchableOpacity>
+
 
 
       			<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 80}}    

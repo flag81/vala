@@ -22,6 +22,8 @@ const PakoPage = ({ navigation }) => {
 			imageStyle= {{opacity:0.5}}>
 
 			<ScrollView style={{flex:1}} contentContainerStyle={{flexGrow: 1}}>
+
+			<View style={{height: 100}} />
 	  
 			<View style={{flex: 1, width: '100%', height: '100%' }}>
 
@@ -41,7 +43,7 @@ const PakoPage = ({ navigation }) => {
 				>
 
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+						<View style={{borderWidth: 0, borderColor: '#ececec', padding: 7}}>
                 <Ionicons name="logo-facebook" size={28} color="#26aa99" />
 						</View>
 					</View>
@@ -57,7 +59,7 @@ const PakoPage = ({ navigation }) => {
 				onPress={()=> social('https://twitter.com/Vala_mobile')}
 					>
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+						<View style={{borderWidth: 0, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
 							 <Ionicons name="logo-twitter" size={28} color="#26aa99" />
 						</View>
 					</View>
@@ -67,24 +69,21 @@ const PakoPage = ({ navigation }) => {
 				</TouchableOpacity>
 
 
-
-                <TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2}}   
+				<TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 80}}
 				
-				onPress={()=> social('https://www.instagram.com/vala_mobile/')}>
-
-					<View style={[styles.centerElement, {width: '100%', flexDirection: 'row', padding:10}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25 ,width:'15%'}}>
-							<Ionicons name="logo-instagram" size={28} color="#26aa99" />
-							
+				onPress={()=> social('https://twitter.com/Vala_mobile')}
+					>
+					<View style={[styles.centerElement, {width: 75}]}>
+						<View style={{borderWidth: 0, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+							 <Ionicons name="logo-instagram" size={28} color="#26aa99" />
 						</View>
-
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25, width:'85%', height:50, marginHorizontal:10}}>
-							<Text style={{fontSize: 15}}>YOUTUBE  channel</Text>
-						</View>
-
 					</View>
-
+					<View style={{flexGrow: 1, flexShrink: 1, alignSelf: 'center'}}>
+						<Text style={{fontSize: 15}}>Instagram</Text>				
+					</View>
 				</TouchableOpacity>
+
+  
 
 
                 <TouchableOpacity style={{flexDirection: 'row',  marginBottom: 2, height: 80}}   
@@ -93,7 +92,7 @@ const PakoPage = ({ navigation }) => {
 				
 				>
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+						<View style={{borderWidth: 0, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
                         <Ionicons name="logo-youtube" size={28} color="#26aa99" />
 						</View>
 					</View>
@@ -111,7 +110,7 @@ const PakoPage = ({ navigation }) => {
 				}
 >
 					<View style={[styles.centerElement, {width: 75}]}>
-						<View style={{borderWidth: 1, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
+						<View style={{borderWidth: 0, borderColor: '#ececec', padding: 7, borderRadius: 25}}>
                         	<Ionicons name="md-mail" size={28} color="#26aa99" />
 						</View>
 					</View>

@@ -2,9 +2,13 @@ import * as React from 'react';
 
 import  { useState } from 'react';
 
-import { Text, View, StyleSheet, TextInput, Button, Alert, ScrollView,SafeAreaView, Image, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TextInput, Alert, ScrollView,SafeAreaView, Image, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
 
- import RNPickerSelect from "react-native-picker-select";
+import RNPickerSelect from "react-native-picker-select";
+
+
+import WheelPickerExpo from 'react-native-wheel-picker-expo';
+
 
 import Constants from 'expo-constants';
 import { handlePress} from '../util';
@@ -55,11 +59,18 @@ const TransferPage= ({ navigation }) => {
 
   const [secretCode, setsecretCode] = useState('');
   const [amount, setAmount] = useState(0);
+  const [city, setCity] = useState(0);
+
 
 	const DeviceWidth = Dimensions.get('window').width ;
   const DeviceHeight = Dimensions.get('window').height ;
 
+
+
   //console.log(errors);
+
+  const CITIES = '1EU,2EU,3EU,4,Lombok,Bima'.split(',');
+
 
   return (
 
@@ -79,11 +90,11 @@ const TransferPage= ({ navigation }) => {
 
           <View style={{ width: '80%', padding:10}}>
 
-            <Text style={{ fontSize:15, color:'black' , fontWeight:'bold'}}>Sheno numerin te telefonit ku doni ti transferoni:</Text>
+            <Text style={{ fontSize:15, color:'black' , fontWeight:'bold'}}>Sheno numerin te telefonit ku doni ta transferoni shumen:</Text>
 
               <TextInput
 
-                style={{height: 50, borderWidth: 1, color:'black',borderRadius:15}}
+                style={{height: 50, borderWidth: 1, color:'black',borderRadius:15, padding:10}}
                 onChangeText={(text) => setsecretCode(text)}
                 value={secretCode}
                 keyboardType= {"numeric"}
@@ -94,28 +105,34 @@ const TransferPage= ({ navigation }) => {
 
           </View>
       <View style={{ marginTop:20, fontSize:15, fontWeight:'black', color:'black', padding:10 }}>
-          <Text>Shuma: {amount} EU</Text>
+          <Text>Shuma: {city} EU</Text>
             
-          <View style={{ borderWidth: 1, borderColor: 'black', overflow: 'hidden', width:'80%', height:'30%'}}>
-               <RNPickerSelect
 
-                  style={pickerStyle}
-          
-                 placeholder={{ label: "Zgjidhe shumen", value: null}}
+
+
+
+             <View style={{ borderWidth: 1, borderColor: 'black', overflow: 'hidden', width:'50%', backgroundColor: 'transparent'}}>
+
+             <WheelPickerExpo
+                height={200}
+                width={'100%'}
+                initialSelectedIndex={1}
+                items={CITIES.map(name => ({ label: name, value: '' }))}
+                onChange={({ item }) => setCity(item.label)} 
                 
-                 value={amount}
-                 onValueChange={(value) => setAmount(value)}
-                 useNativeAndroidPickerStyle={false}
-                 items =
-                 {[
-                     { label: "1 EU", value: "1" },
-                     { label: "2 EU", value: "2" },
-                     { label: "3 EU", value: "3" },
-                     { label: "4 EU", value: "4" }, 
-                     { label: "5 EU", value: "5" }
-                 ]}
-             />
+              />
+
+
              </View>
+
+             
+ 
+
+             
+
+
+
+
          </View>
 
 
